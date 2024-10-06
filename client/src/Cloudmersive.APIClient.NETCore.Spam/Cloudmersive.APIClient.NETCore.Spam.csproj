@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyName>Cloudmersive.APIClient.NETCore.Spam</AssemblyName>
+    <PackageId>Cloudmersive.APIClient.NETCore.Spam</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>Cloudmersive</Authors>
+    <Company>Cloudmersive</Company>
+    <AssemblyTitle>Cloudmersive Spam Detection API Client</AssemblyTitle>
+    <Description>Detect Spam and Business Email Compromise attacks in links and URLs.</Description>
+    <Copyright>No Copyright</Copyright>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <RootNamespace>Cloudmersive.APIClient.NETCore.Spam</RootNamespace>
+    <Version>1.0.1</Version>
+  <PackageIconUrl>https://cloudmersive.com/images/cmsdk_core.png</PackageIconUrl><PackageLicenseExpression>Apache-2.0</PackageLicenseExpression><PackageProjectUrl>https://cloudmersive.com/spam-api</PackageProjectUrl></PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FubarCoder.RestSharp.Portable.Core" Version="4.0.7" />
+    <PackageReference Include="FubarCoder.RestSharp.Portable.HttpClient" Version="4.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="JsonSubTypes" Version="1.2.0" />
+  </ItemGroup><Target Name="PostBuild" AfterTargets="PostBuildEvent">    <Exec Command="call powershell C:\CodeSigning\sign.ps1  $(TargetPath)" />  </Target>
+
+
+</Project>
