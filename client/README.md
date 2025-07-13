@@ -5,7 +5,7 @@ Easily and directly scan and block phishing security threats.
 This C# SDK is for the [Cloudmersive Spam Detection API](https://www.cloudmersive.com/spam-api):
 
 - API version: v1
-- SDK version: 2.0.0
+- SDK version: 2.0.1
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
