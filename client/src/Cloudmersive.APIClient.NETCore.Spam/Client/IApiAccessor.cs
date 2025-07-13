@@ -1,5 +1,5 @@
 /* 
- * phishingapi
+ * spamapi
  *
  * Easily and directly scan and block phishing security threats.
  *

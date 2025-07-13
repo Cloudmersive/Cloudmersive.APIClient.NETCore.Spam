@@ -1,5 +1,5 @@
 /* 
- * phishingapi
+ * spamapi
  *
  * Easily and directly scan and block phishing security threats.
  *
@@ -23,7 +23,7 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.Spam.Client.SwaggerD
 namespace Cloudmersive.APIClient.NETCore.Spam.Model
 {
     /// <summary>
-    /// SpamDetectionAdvancedResponse
+    /// Result of detecting spam using AI
     /// </summary>
     [DataContract]
     public partial class SpamDetectionAdvancedResponse :  IEquatable<SpamDetectionAdvancedResponse>
@@ -31,17 +31,54 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SpamDetectionAdvancedResponse" /> class.
         /// </summary>
-        /// <param name="cleanResult">cleanResult.</param>
-        public SpamDetectionAdvancedResponse(bool? cleanResult = default(bool?))
+        /// <param name="cleanResult">True if the result is not spam (clean), and false otherwise.</param>
+        /// <param name="containsSpam">True if the input text contains spam, false otherwise.</param>
+        /// <param name="containsUnsolicitedSales">True if the input text contains unsolicited sales, false otherwise.</param>
+        /// <param name="containsPromotionalContent">True if the input text contains promotional content, false otherwise.</param>
+        /// <param name="containsPhishingAttempt">True if the input text contains a phishing attempt, false otherwise.</param>
+        public SpamDetectionAdvancedResponse(bool? cleanResult = default(bool?), bool? containsSpam = default(bool?), bool? containsUnsolicitedSales = default(bool?), bool? containsPromotionalContent = default(bool?), bool? containsPhishingAttempt = default(bool?))
         {
             this.CleanResult = cleanResult;
+            this.ContainsSpam = containsSpam;
+            this.ContainsUnsolicitedSales = containsUnsolicitedSales;
+            this.ContainsPromotionalContent = containsPromotionalContent;
+            this.ContainsPhishingAttempt = containsPhishingAttempt;
         }
         
         /// <summary>
-        /// Gets or Sets CleanResult
+        /// True if the result is not spam (clean), and false otherwise
         /// </summary>
-        [DataMember(Name="cleanResult", EmitDefaultValue=false)]
+        /// <value>True if the result is not spam (clean), and false otherwise</value>
+        [DataMember(Name="CleanResult", EmitDefaultValue=false)]
         public bool? CleanResult { get; set; }
+
+        /// <summary>
+        /// True if the input text contains spam, false otherwise
+        /// </summary>
+        /// <value>True if the input text contains spam, false otherwise</value>
+        [DataMember(Name="ContainsSpam", EmitDefaultValue=false)]
+        public bool? ContainsSpam { get; set; }
+
+        /// <summary>
+        /// True if the input text contains unsolicited sales, false otherwise
+        /// </summary>
+        /// <value>True if the input text contains unsolicited sales, false otherwise</value>
+        [DataMember(Name="ContainsUnsolicitedSales", EmitDefaultValue=false)]
+        public bool? ContainsUnsolicitedSales { get; set; }
+
+        /// <summary>
+        /// True if the input text contains promotional content, false otherwise
+        /// </summary>
+        /// <value>True if the input text contains promotional content, false otherwise</value>
+        [DataMember(Name="ContainsPromotionalContent", EmitDefaultValue=false)]
+        public bool? ContainsPromotionalContent { get; set; }
+
+        /// <summary>
+        /// True if the input text contains a phishing attempt, false otherwise
+        /// </summary>
+        /// <value>True if the input text contains a phishing attempt, false otherwise</value>
+        [DataMember(Name="ContainsPhishingAttempt", EmitDefaultValue=false)]
+        public bool? ContainsPhishingAttempt { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -52,6 +89,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
             var sb = new StringBuilder();
             sb.Append("class SpamDetectionAdvancedResponse {\n");
             sb.Append("  CleanResult: ").Append(CleanResult).Append("\n");
+            sb.Append("  ContainsSpam: ").Append(ContainsSpam).Append("\n");
+            sb.Append("  ContainsUnsolicitedSales: ").Append(ContainsUnsolicitedSales).Append("\n");
+            sb.Append("  ContainsPromotionalContent: ").Append(ContainsPromotionalContent).Append("\n");
+            sb.Append("  ContainsPhishingAttempt: ").Append(ContainsPhishingAttempt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,6 +131,26 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
                     this.CleanResult == input.CleanResult ||
                     (this.CleanResult != null &&
                     this.CleanResult.Equals(input.CleanResult))
+                ) && 
+                (
+                    this.ContainsSpam == input.ContainsSpam ||
+                    (this.ContainsSpam != null &&
+                    this.ContainsSpam.Equals(input.ContainsSpam))
+                ) && 
+                (
+                    this.ContainsUnsolicitedSales == input.ContainsUnsolicitedSales ||
+                    (this.ContainsUnsolicitedSales != null &&
+                    this.ContainsUnsolicitedSales.Equals(input.ContainsUnsolicitedSales))
+                ) && 
+                (
+                    this.ContainsPromotionalContent == input.ContainsPromotionalContent ||
+                    (this.ContainsPromotionalContent != null &&
+                    this.ContainsPromotionalContent.Equals(input.ContainsPromotionalContent))
+                ) && 
+                (
+                    this.ContainsPhishingAttempt == input.ContainsPhishingAttempt ||
+                    (this.ContainsPhishingAttempt != null &&
+                    this.ContainsPhishingAttempt.Equals(input.ContainsPhishingAttempt))
                 );
         }
 
@@ -104,6 +165,14 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
                 int hashCode = 41;
                 if (this.CleanResult != null)
                     hashCode = hashCode * 59 + this.CleanResult.GetHashCode();
+                if (this.ContainsSpam != null)
+                    hashCode = hashCode * 59 + this.ContainsSpam.GetHashCode();
+                if (this.ContainsUnsolicitedSales != null)
+                    hashCode = hashCode * 59 + this.ContainsUnsolicitedSales.GetHashCode();
+                if (this.ContainsPromotionalContent != null)
+                    hashCode = hashCode * 59 + this.ContainsPromotionalContent.GetHashCode();
+                if (this.ContainsPhishingAttempt != null)
+                    hashCode = hashCode * 59 + this.ContainsPhishingAttempt.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,26 +23,20 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.Spam.Client.SwaggerD
 namespace Cloudmersive.APIClient.NETCore.Spam.Model
 {
     /// <summary>
-    /// AI advanced spam detection request
+    /// AI spam detection request
     /// </summary>
     [DataContract]
-    public partial class SpamDetectionAdvancedRequest :  IEquatable<SpamDetectionAdvancedRequest>
+    public partial class SpamDetectionRequest :  IEquatable<SpamDetectionRequest>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpamDetectionAdvancedRequest" /> class.
+        /// Initializes a new instance of the <see cref="SpamDetectionRequest" /> class.
         /// </summary>
         /// <param name="inputString">Input text string to detect spam against.</param>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced..</param>
-        /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise.</param>
-        /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise.</param>
-        /// <param name="allowPhishing">True if phishing should be allowed, false otherwise.</param>
-        public SpamDetectionAdvancedRequest(string inputString = default(string), string model = default(string), bool? allowUnsolicitedSales = default(bool?), bool? allowPromotionalContent = default(bool?), bool? allowPhishing = default(bool?))
+        public SpamDetectionRequest(string inputString = default(string), string model = default(string))
         {
             this.InputString = inputString;
             this.Model = model;
-            this.AllowUnsolicitedSales = allowUnsolicitedSales;
-            this.AllowPromotionalContent = allowPromotionalContent;
-            this.AllowPhishing = allowPhishing;
         }
         
         /// <summary>
@@ -60,39 +54,15 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
         public string Model { get; set; }
 
         /// <summary>
-        /// True if unsolicited sales should be allowed, false otherwise
-        /// </summary>
-        /// <value>True if unsolicited sales should be allowed, false otherwise</value>
-        [DataMember(Name="AllowUnsolicitedSales", EmitDefaultValue=false)]
-        public bool? AllowUnsolicitedSales { get; set; }
-
-        /// <summary>
-        /// True if promotional content should be allowed, false otherwise
-        /// </summary>
-        /// <value>True if promotional content should be allowed, false otherwise</value>
-        [DataMember(Name="AllowPromotionalContent", EmitDefaultValue=false)]
-        public bool? AllowPromotionalContent { get; set; }
-
-        /// <summary>
-        /// True if phishing should be allowed, false otherwise
-        /// </summary>
-        /// <value>True if phishing should be allowed, false otherwise</value>
-        [DataMember(Name="AllowPhishing", EmitDefaultValue=false)]
-        public bool? AllowPhishing { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SpamDetectionAdvancedRequest {\n");
+            sb.Append("class SpamDetectionRequest {\n");
             sb.Append("  InputString: ").Append(InputString).Append("\n");
             sb.Append("  Model: ").Append(Model).Append("\n");
-            sb.Append("  AllowUnsolicitedSales: ").Append(AllowUnsolicitedSales).Append("\n");
-            sb.Append("  AllowPromotionalContent: ").Append(AllowPromotionalContent).Append("\n");
-            sb.Append("  AllowPhishing: ").Append(AllowPhishing).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,15 +83,15 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SpamDetectionAdvancedRequest);
+            return this.Equals(input as SpamDetectionRequest);
         }
 
         /// <summary>
-        /// Returns true if SpamDetectionAdvancedRequest instances are equal
+        /// Returns true if SpamDetectionRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of SpamDetectionAdvancedRequest to be compared</param>
+        /// <param name="input">Instance of SpamDetectionRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SpamDetectionAdvancedRequest input)
+        public bool Equals(SpamDetectionRequest input)
         {
             if (input == null)
                 return false;
@@ -136,21 +106,6 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
                     this.Model == input.Model ||
                     (this.Model != null &&
                     this.Model.Equals(input.Model))
-                ) && 
-                (
-                    this.AllowUnsolicitedSales == input.AllowUnsolicitedSales ||
-                    (this.AllowUnsolicitedSales != null &&
-                    this.AllowUnsolicitedSales.Equals(input.AllowUnsolicitedSales))
-                ) && 
-                (
-                    this.AllowPromotionalContent == input.AllowPromotionalContent ||
-                    (this.AllowPromotionalContent != null &&
-                    this.AllowPromotionalContent.Equals(input.AllowPromotionalContent))
-                ) && 
-                (
-                    this.AllowPhishing == input.AllowPhishing ||
-                    (this.AllowPhishing != null &&
-                    this.AllowPhishing.Equals(input.AllowPhishing))
                 );
         }
 
@@ -167,12 +122,6 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
                     hashCode = hashCode * 59 + this.InputString.GetHashCode();
                 if (this.Model != null)
                     hashCode = hashCode * 59 + this.Model.GetHashCode();
-                if (this.AllowUnsolicitedSales != null)
-                    hashCode = hashCode * 59 + this.AllowUnsolicitedSales.GetHashCode();
-                if (this.AllowPromotionalContent != null)
-                    hashCode = hashCode * 59 + this.AllowPromotionalContent.GetHashCode();
-                if (this.AllowPhishing != null)
-                    hashCode = hashCode * 59 + this.AllowPhishing.GetHashCode();
                 return hashCode;
             }
         }

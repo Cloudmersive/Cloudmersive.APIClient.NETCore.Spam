@@ -1,5 +1,5 @@
 /* 
- * phishingapi
+ * spamapi
  *
  * Easily and directly scan and block phishing security threats.
  *
@@ -29,7 +29,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.1";
+        public const string Version = "2.0.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -110,7 +110,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "Swagger-Codegen/1.0.1/csharp";
+            UserAgent = "Swagger-Codegen/2.0.0/csharp";
             BasePath = "https://localhost";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -183,7 +183,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "Swagger-Codegen/1.0.1/csharp"
+            string userAgent = "Swagger-Codegen/2.0.0/csharp"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -416,7 +416,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
             String report = "C# SDK (Cloudmersive.APIClient.NETCore.Spam) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: v1\n";
-            report += "    SDK Package Version: 1.0.1\n";
+            report += "    SDK Package Version: 2.0.0\n";
 
             return report;
         }

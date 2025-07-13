@@ -1,11 +1,11 @@
-# Cloudmersive.APIClient.NETCore.Spam - the C# library for the phishingapi
+# Cloudmersive.APIClient.NETCore.Spam - the C# library for the spamapi
 
 Easily and directly scan and block phishing security threats.
 
 This C# SDK is for the [Cloudmersive Spam Detection API](https://www.cloudmersive.com/spam-api):
 
 - API version: v1
-- SDK version: 1.0.1
+- SDK version: 2.0.0
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -54,10 +54,11 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Apikey", "Bearer");
 
             var apiInstance = new SpamDetectionApi();
-            var body = new SpamDetectionAdvancedRequest(); // SpamDetectionAdvancedRequest |  (optional) 
+            var body = new SpamDetectionAdvancedRequest(); // SpamDetectionAdvancedRequest | Spam detection request (optional) 
 
             try
             {
+                // Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
                 SpamDetectionAdvancedResponse result = apiInstance.SpamDetectTextStringAdvancedPost(body);
                 Debug.WriteLine(result);
             }
@@ -78,7 +79,8 @@ All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SpamDetectionApi* | [**SpamDetectTextStringAdvancedPost**](docs/SpamDetectionApi.md#spamdetecttextstringadvancedpost) | **POST** /spam/detect/text-string/advanced | 
+*SpamDetectionApi* | [**SpamDetectTextStringAdvancedPost**](docs/SpamDetectionApi.md#spamdetecttextstringadvancedpost) | **POST** /spam/detect/text-string/advanced | Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+*SpamDetectionApi* | [**SpamDetectTextStringPost**](docs/SpamDetectionApi.md#spamdetecttextstringpost) | **POST** /spam/detect/text-string | Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
 
 
 <a name="documentation-for-models"></a>
@@ -86,6 +88,8 @@ Class | Method | HTTP request | Description
 
  - [Model.SpamDetectionAdvancedRequest](docs/SpamDetectionAdvancedRequest.md)
  - [Model.SpamDetectionAdvancedResponse](docs/SpamDetectionAdvancedResponse.md)
+ - [Model.SpamDetectionRequest](docs/SpamDetectionRequest.md)
+ - [Model.SpamDetectionResponse](docs/SpamDetectionResponse.md)
 
 
 <a name="documentation-for-authorization"></a>
