@@ -1,7 +1,7 @@
 /* 
  * spamapi
  *
- * Easily and directly scan and block phishing security threats.
+ * Easily and directly scan and block spam security threats in input.
  *
  * OpenAPI spec version: v1
  * 
