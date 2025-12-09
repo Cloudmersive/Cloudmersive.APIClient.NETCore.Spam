@@ -1,7 +1,7 @@
 ﻿{
 
     "packageName": "Cloudmersive.APIClient.NETCore.Spam",
-    "packageVersion": "2.0.3",
+    "packageVersion": "2.0.4",
     "netCoreProjectFile": "true",
     "packageGuid": "efca7758-fefc-4416-8392-caae72f28671",
     "targetFramework": "v5.0"

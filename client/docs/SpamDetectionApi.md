@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="spamdetectfileadvancedpost"></a>
 # **SpamDetectFileAdvancedPost**
-> SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null)
+> SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null)
 
 Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
@@ -37,16 +37,17 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Apikey", "Bearer");
 
             var apiInstance = new SpamDetectionApi();
-            var model = model_example;  // string |  (optional)  (default to Advanced)
-            var allowPhishing = true;  // bool? |  (optional)  (default to false)
-            var allowUnsolicitedSales = true;  // bool? |  (optional)  (default to false)
-            var allowPromotionalContent = true;  // bool? |  (optional)  (default to false)
+            var model = model_example;  // string | Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional)  (default to Advanced)
+            var preprocessing = preprocessing_example;  // string | Optional: Specify which preprocessing to Use.  Possible choices are None, Compatability and Auto.  Default is Auto. (optional)  (default to Auto)
+            var allowPhishing = true;  // bool? | True if phishing should be allowed, false otherwise (optional)  (default to false)
+            var allowUnsolicitedSales = true;  // bool? | True if unsolicited sales should be allowed, false otherwise (optional)  (default to false)
+            var allowPromotionalContent = true;  // bool? | True if promotional content should be allowed, false otherwise (optional)  (default to true)
             var inputFile = new System.IO.Stream(); // System.IO.Stream |  (optional) 
 
             try
             {
                 // Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-                SpamDetectionAdvancedResponse result = apiInstance.SpamDetectFileAdvancedPost(model, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, inputFile);
+                SpamDetectionAdvancedResponse result = apiInstance.SpamDetectFileAdvancedPost(model, preprocessing, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, inputFile);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,10 +63,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | **string**|  | [optional] [default to Advanced]
- **allowPhishing** | **bool?**|  | [optional] [default to false]
- **allowUnsolicitedSales** | **bool?**|  | [optional] [default to false]
- **allowPromotionalContent** | **bool?**|  | [optional] [default to false]
+ **model** | **string**| Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. | [optional] [default to Advanced]
+ **preprocessing** | **string**| Optional: Specify which preprocessing to Use.  Possible choices are None, Compatability and Auto.  Default is Auto. | [optional] [default to Auto]
+ **allowPhishing** | **bool?**| True if phishing should be allowed, false otherwise | [optional] [default to false]
+ **allowUnsolicitedSales** | **bool?**| True if unsolicited sales should be allowed, false otherwise | [optional] [default to false]
+ **allowPromotionalContent** | **bool?**| True if promotional content should be allowed, false otherwise | [optional] [default to true]
  **inputFile** | **System.IO.Stream**|  | [optional] 
 
 ### Return type
