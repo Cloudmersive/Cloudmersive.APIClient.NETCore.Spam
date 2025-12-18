@@ -25,10 +25,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -36,15 +36,16 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>SpamDetectionAdvancedResponse</returns>
-        SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null);
+        SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null);
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -52,14 +53,15 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>ApiResponse of SpamDetectionAdvancedResponse</returns>
-        ApiResponse<SpamDetectionAdvancedResponse> SpamDetectFileAdvancedPostWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null);
+        ApiResponse<SpamDetectionAdvancedResponse> SpamDetectFileAdvancedPostWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null);
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX)
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -68,10 +70,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         SpamDetectionResponse SpamDetectFilePost (string model = null, System.IO.Stream inputFile = null);
 
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX)
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -79,10 +81,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <returns>ApiResponse of SpamDetectionResponse</returns>
         ApiResponse<SpamDetectionResponse> SpamDetectFilePostWithHttpInfo (string model = null, System.IO.Stream inputFile = null);
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against a form submission
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -90,20 +92,20 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         SpamDetectionFormSubmissionAdvancedResponse SpamDetectFormSubmissionAdvancedPost (SpamDetectionAdvancedFormSubmissionRequest body = null);
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against a form submission
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
         /// <returns>ApiResponse of SpamDetectionFormSubmissionAdvancedResponse</returns>
         ApiResponse<SpamDetectionFormSubmissionAdvancedResponse> SpamDetectFormSubmissionAdvancedPostWithHttpInfo (SpamDetectionAdvancedFormSubmissionRequest body = null);
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -111,20 +113,20 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         SpamDetectionAdvancedResponse SpamDetectTextStringAdvancedPost (SpamDetectionAdvancedRequest body = null);
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
         /// <returns>ApiResponse of SpamDetectionAdvancedResponse</returns>
         ApiResponse<SpamDetectionAdvancedResponse> SpamDetectTextStringAdvancedPostWithHttpInfo (SpamDetectionAdvancedRequest body = null);
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
+        /// Perform AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -132,10 +134,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         SpamDetectionResponse SpamDetectTextStringPost (SpamDetectionRequest body = null);
 
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
+        /// Perform AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -144,10 +146,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -155,15 +157,16 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>Task of SpamDetectionAdvancedResponse</returns>
-        System.Threading.Tasks.Task<SpamDetectionAdvancedResponse> SpamDetectFileAdvancedPostAsync (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null);
+        System.Threading.Tasks.Task<SpamDetectionAdvancedResponse> SpamDetectFileAdvancedPostAsync (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null);
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -171,14 +174,15 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>Task of ApiResponse (SpamDetectionAdvancedResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SpamDetectionAdvancedResponse>> SpamDetectFileAdvancedPostAsyncWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null);
+        System.Threading.Tasks.Task<ApiResponse<SpamDetectionAdvancedResponse>> SpamDetectFileAdvancedPostAsyncWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null);
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX)
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -187,10 +191,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         System.Threading.Tasks.Task<SpamDetectionResponse> SpamDetectFilePostAsync (string model = null, System.IO.Stream inputFile = null);
 
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX)
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -198,10 +202,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <returns>Task of ApiResponse (SpamDetectionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SpamDetectionResponse>> SpamDetectFilePostAsyncWithHttpInfo (string model = null, System.IO.Stream inputFile = null);
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against a form submission
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -209,20 +213,20 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         System.Threading.Tasks.Task<SpamDetectionFormSubmissionAdvancedResponse> SpamDetectFormSubmissionAdvancedPostAsync (SpamDetectionAdvancedFormSubmissionRequest body = null);
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against a form submission
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
         /// <returns>Task of ApiResponse (SpamDetectionFormSubmissionAdvancedResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SpamDetectionFormSubmissionAdvancedResponse>> SpamDetectFormSubmissionAdvancedPostAsyncWithHttpInfo (SpamDetectionAdvancedFormSubmissionRequest body = null);
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -230,20 +234,20 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         System.Threading.Tasks.Task<SpamDetectionAdvancedResponse> SpamDetectTextStringAdvancedPostAsync (SpamDetectionAdvancedRequest body = null);
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+        /// Perform advanced AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
         /// <returns>Task of ApiResponse (SpamDetectionAdvancedResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SpamDetectionAdvancedResponse>> SpamDetectTextStringAdvancedPostAsyncWithHttpInfo (SpamDetectionAdvancedRequest body = null);
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
+        /// Perform AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -251,10 +255,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         System.Threading.Tasks.Task<SpamDetectionResponse> SpamDetectTextStringPostAsync (SpamDetectionRequest body = null);
 
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
+        /// Perform AI spam detection and classification against input text string
         /// </summary>
         /// <remarks>
-        /// 
+        /// Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -361,7 +365,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text file. Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -369,16 +373,17 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>SpamDetectionAdvancedResponse</returns>
-        public SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null)
+        public SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null)
         {
-             ApiResponse<SpamDetectionAdvancedResponse> localVarResponse = SpamDetectFileAdvancedPostWithHttpInfo(model, preprocessing, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, inputFile);
+             ApiResponse<SpamDetectionAdvancedResponse> localVarResponse = SpamDetectFileAdvancedPostWithHttpInfo(model, preprocessing, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, customPolicyId, inputFile);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text file. Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -386,9 +391,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>ApiResponse of SpamDetectionAdvancedResponse</returns>
-        public ApiResponse< SpamDetectionAdvancedResponse > SpamDetectFileAdvancedPostWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null)
+        public ApiResponse< SpamDetectionAdvancedResponse > SpamDetectFileAdvancedPostWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null)
         {
 
             var localVarPath = "./spam/detect/file/advanced";
@@ -420,6 +426,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
             if (allowPhishing != null) localVarHeaderParams.Add("allowPhishing", this.Configuration.ApiClient.ParameterToString(allowPhishing)); // header parameter
             if (allowUnsolicitedSales != null) localVarHeaderParams.Add("allowUnsolicitedSales", this.Configuration.ApiClient.ParameterToString(allowUnsolicitedSales)); // header parameter
             if (allowPromotionalContent != null) localVarHeaderParams.Add("allowPromotionalContent", this.Configuration.ApiClient.ParameterToString(allowPromotionalContent)); // header parameter
+            if (customPolicyId != null) localVarHeaderParams.Add("customPolicyId", this.Configuration.ApiClient.ParameterToString(customPolicyId)); // header parameter
             if (inputFile != null) localVarFileParams.Add("inputFile", this.Configuration.ApiClient.ParameterToFile("inputFile", inputFile));
 
             // authentication (Apikey) required
@@ -447,7 +454,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text file. Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -455,17 +462,18 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>Task of SpamDetectionAdvancedResponse</returns>
-        public async System.Threading.Tasks.Task<SpamDetectionAdvancedResponse> SpamDetectFileAdvancedPostAsync (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null)
+        public async System.Threading.Tasks.Task<SpamDetectionAdvancedResponse> SpamDetectFileAdvancedPostAsync (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null)
         {
-             ApiResponse<SpamDetectionAdvancedResponse> localVarResponse = await SpamDetectFileAdvancedPostAsyncWithHttpInfo(model, preprocessing, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, inputFile);
+             ApiResponse<SpamDetectionAdvancedResponse> localVarResponse = await SpamDetectFileAdvancedPostAsyncWithHttpInfo(model, preprocessing, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, customPolicyId, inputFile);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text file. Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Optional: Specify which AI model to use.  Possible choices are Normal and Advanced.  Default is Advanced. (optional, default to Advanced)</param>
@@ -473,9 +481,10 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise (optional, default to false)</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise (optional, default to true)</param>
+        /// <param name="customPolicyId">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional)</param>
         /// <param name="inputFile"> (optional)</param>
         /// <returns>Task of ApiResponse (SpamDetectionAdvancedResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SpamDetectionAdvancedResponse>> SpamDetectFileAdvancedPostAsyncWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null)
+        public async System.Threading.Tasks.Task<ApiResponse<SpamDetectionAdvancedResponse>> SpamDetectFileAdvancedPostAsyncWithHttpInfo (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null)
         {
 
             var localVarPath = "./spam/detect/file/advanced";
@@ -507,6 +516,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
             if (allowPhishing != null) localVarHeaderParams.Add("allowPhishing", this.Configuration.ApiClient.ParameterToString(allowPhishing)); // header parameter
             if (allowUnsolicitedSales != null) localVarHeaderParams.Add("allowUnsolicitedSales", this.Configuration.ApiClient.ParameterToString(allowUnsolicitedSales)); // header parameter
             if (allowPromotionalContent != null) localVarHeaderParams.Add("allowPromotionalContent", this.Configuration.ApiClient.ParameterToString(allowPromotionalContent)); // header parameter
+            if (customPolicyId != null) localVarHeaderParams.Add("customPolicyId", this.Configuration.ApiClient.ParameterToString(customPolicyId)); // header parameter
             if (inputFile != null) localVarFileParams.Add("inputFile", this.Configuration.ApiClient.ParameterToFile("inputFile", inputFile));
 
             // authentication (Apikey) required
@@ -534,7 +544,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected. 
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX) Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -547,7 +557,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected. 
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX) Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -608,7 +618,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected. 
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX) Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -622,7 +632,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected. 
+        /// Perform AI spam detection and classification on an input image or document (PDF or DOCX) Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="model">Model to use; default setting is Advanced (optional, default to Advanced)</param>
@@ -683,7 +693,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against a form submission Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -695,7 +705,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against a form submission Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -763,7 +773,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against a form submission Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -776,7 +786,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against a form submission Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -844,7 +854,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -856,7 +866,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -924,7 +934,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -937,7 +947,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. 
+        /// Perform advanced AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -1005,7 +1015,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected. 
+        /// Perform AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -1017,7 +1027,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected. 
+        /// Perform AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -1085,7 +1095,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected. 
+        /// Perform AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>
@@ -1098,7 +1108,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Api
         }
 
         /// <summary>
-        /// Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected. 
+        /// Perform AI spam detection and classification against input text string Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Spam.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Spam detection request (optional)</param>

@@ -4,18 +4,20 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SpamDetectFileAdvancedPost**](SpamDetectionApi.md#spamdetectfileadvancedpost) | **POST** /spam/detect/file/advanced | Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-[**SpamDetectFilePost**](SpamDetectionApi.md#spamdetectfilepost) | **POST** /spam/detect/file | Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
-[**SpamDetectFormSubmissionAdvancedPost**](SpamDetectionApi.md#spamdetectformsubmissionadvancedpost) | **POST** /spam/detect/form-submission/advanced | Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-[**SpamDetectTextStringAdvancedPost**](SpamDetectionApi.md#spamdetecttextstringadvancedpost) | **POST** /spam/detect/text-string/advanced | Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-[**SpamDetectTextStringPost**](SpamDetectionApi.md#spamdetecttextstringpost) | **POST** /spam/detect/text-string | Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
+[**SpamDetectFileAdvancedPost**](SpamDetectionApi.md#spamdetectfileadvancedpost) | **POST** /spam/detect/file/advanced | Perform advanced AI spam detection and classification against input text file.
+[**SpamDetectFilePost**](SpamDetectionApi.md#spamdetectfilepost) | **POST** /spam/detect/file | Perform AI spam detection and classification on an input image or document (PDF or DOCX)
+[**SpamDetectFormSubmissionAdvancedPost**](SpamDetectionApi.md#spamdetectformsubmissionadvancedpost) | **POST** /spam/detect/form-submission/advanced | Perform advanced AI spam detection and classification against a form submission
+[**SpamDetectTextStringAdvancedPost**](SpamDetectionApi.md#spamdetecttextstringadvancedpost) | **POST** /spam/detect/text-string/advanced | Perform advanced AI spam detection and classification against input text string
+[**SpamDetectTextStringPost**](SpamDetectionApi.md#spamdetecttextstringpost) | **POST** /spam/detect/text-string | Perform AI spam detection and classification against input text string
 
 
 <a name="spamdetectfileadvancedpost"></a>
 # **SpamDetectFileAdvancedPost**
-> SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, System.IO.Stream inputFile = null)
+> SpamDetectionAdvancedResponse SpamDetectFileAdvancedPost (string model = null, string preprocessing = null, bool? allowPhishing = null, bool? allowUnsolicitedSales = null, bool? allowPromotionalContent = null, string customPolicyId = null, System.IO.Stream inputFile = null)
 
-Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI spam detection and classification against input text file.
+
+Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
 
 ### Example
 ```csharp
@@ -42,12 +44,13 @@ namespace Example
             var allowPhishing = true;  // bool? | True if phishing should be allowed, false otherwise (optional)  (default to false)
             var allowUnsolicitedSales = true;  // bool? | True if unsolicited sales should be allowed, false otherwise (optional)  (default to false)
             var allowPromotionalContent = true;  // bool? | True if promotional content should be allowed, false otherwise (optional)  (default to true)
+            var customPolicyId = customPolicyId_example;  // string | Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud (optional) 
             var inputFile = new System.IO.Stream(); // System.IO.Stream |  (optional) 
 
             try
             {
-                // Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-                SpamDetectionAdvancedResponse result = apiInstance.SpamDetectFileAdvancedPost(model, preprocessing, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, inputFile);
+                // Perform advanced AI spam detection and classification against input text file.
+                SpamDetectionAdvancedResponse result = apiInstance.SpamDetectFileAdvancedPost(model, preprocessing, allowPhishing, allowUnsolicitedSales, allowPromotionalContent, customPolicyId, inputFile);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -68,6 +71,7 @@ Name | Type | Description  | Notes
  **allowPhishing** | **bool?**| True if phishing should be allowed, false otherwise | [optional] [default to false]
  **allowUnsolicitedSales** | **bool?**| True if unsolicited sales should be allowed, false otherwise | [optional] [default to false]
  **allowPromotionalContent** | **bool?**| True if promotional content should be allowed, false otherwise | [optional] [default to true]
+ **customPolicyId** | **string**| Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud | [optional] 
  **inputFile** | **System.IO.Stream**|  | [optional] 
 
 ### Return type
@@ -89,7 +93,9 @@ Name | Type | Description  | Notes
 # **SpamDetectFilePost**
 > SpamDetectionResponse SpamDetectFilePost (string model = null, System.IO.Stream inputFile = null)
 
-Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+Perform AI spam detection and classification on an input image or document (PDF or DOCX)
+
+Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.  Supported file formats include DOCX, PDF, XLSX, PPTX, EML, MSG, JPG, PNG and WEBP.
 
 ### Example
 ```csharp
@@ -116,7 +122,7 @@ namespace Example
 
             try
             {
-                // Perform AI spam detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+                // Perform AI spam detection and classification on an input image or document (PDF or DOCX)
                 SpamDetectionResponse result = apiInstance.SpamDetectFilePost(model, inputFile);
                 Debug.WriteLine(result);
             }
@@ -155,7 +161,9 @@ Name | Type | Description  | Notes
 # **SpamDetectFormSubmissionAdvancedPost**
 > SpamDetectionFormSubmissionAdvancedResponse SpamDetectFormSubmissionAdvancedPost (SpamDetectionAdvancedFormSubmissionRequest body = null)
 
-Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI spam detection and classification against a form submission
+
+Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```csharp
@@ -181,7 +189,7 @@ namespace Example
 
             try
             {
-                // Perform advanced AI spam detection and classification against a form submission.  Analyzes form input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+                // Perform advanced AI spam detection and classification against a form submission
                 SpamDetectionFormSubmissionAdvancedResponse result = apiInstance.SpamDetectFormSubmissionAdvancedPost(body);
                 Debug.WriteLine(result);
             }
@@ -219,7 +227,9 @@ Name | Type | Description  | Notes
 # **SpamDetectTextStringAdvancedPost**
 > SpamDetectionAdvancedResponse SpamDetectTextStringAdvancedPost (SpamDetectionAdvancedRequest body = null)
 
-Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI spam detection and classification against input text string
+
+Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```csharp
@@ -245,7 +255,7 @@ namespace Example
 
             try
             {
-                // Perform advanced AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+                // Perform advanced AI spam detection and classification against input text string
                 SpamDetectionAdvancedResponse result = apiInstance.SpamDetectTextStringAdvancedPost(body);
                 Debug.WriteLine(result);
             }
@@ -283,7 +293,9 @@ Name | Type | Description  | Notes
 # **SpamDetectTextStringPost**
 > SpamDetectionResponse SpamDetectTextStringPost (SpamDetectionRequest body = null)
 
-Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
+Perform AI spam detection and classification against input text string
+
+Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
 
 ### Example
 ```csharp
@@ -309,7 +321,7 @@ namespace Example
 
             try
             {
-                // Perform AI spam detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-75 API calls depending on model selected.
+                // Perform AI spam detection and classification against input text string
                 SpamDetectionResponse result = apiInstance.SpamDetectTextStringPost(body);
                 Debug.WriteLine(result);
             }

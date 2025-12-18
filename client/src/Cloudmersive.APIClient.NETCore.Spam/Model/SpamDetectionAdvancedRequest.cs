@@ -36,13 +36,15 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
         /// <param name="allowUnsolicitedSales">True if unsolicited sales should be allowed, false otherwise.</param>
         /// <param name="allowPromotionalContent">True if promotional content should be allowed, false otherwise.</param>
         /// <param name="allowPhishing">True if phishing should be allowed, false otherwise.</param>
-        public SpamDetectionAdvancedRequest(string inputString = default(string), string model = default(string), bool? allowUnsolicitedSales = default(bool?), bool? allowPromotionalContent = default(bool?), bool? allowPhishing = default(bool?))
+        /// <param name="customPolicyID">Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud.</param>
+        public SpamDetectionAdvancedRequest(string inputString = default(string), string model = default(string), bool? allowUnsolicitedSales = default(bool?), bool? allowPromotionalContent = default(bool?), bool? allowPhishing = default(bool?), string customPolicyID = default(string))
         {
             this.InputString = inputString;
             this.Model = model;
             this.AllowUnsolicitedSales = allowUnsolicitedSales;
             this.AllowPromotionalContent = allowPromotionalContent;
             this.AllowPhishing = allowPhishing;
+            this.CustomPolicyID = customPolicyID;
         }
         
         /// <summary>
@@ -81,6 +83,13 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
         public bool? AllowPhishing { get; set; }
 
         /// <summary>
+        /// Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud
+        /// </summary>
+        /// <value>Apply a Custom Policy for Spam Enforcement by providing the ID; to create a Custom Policy, navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud</value>
+        [DataMember(Name="CustomPolicyID", EmitDefaultValue=false)]
+        public string CustomPolicyID { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +102,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
             sb.Append("  AllowUnsolicitedSales: ").Append(AllowUnsolicitedSales).Append("\n");
             sb.Append("  AllowPromotionalContent: ").Append(AllowPromotionalContent).Append("\n");
             sb.Append("  AllowPhishing: ").Append(AllowPhishing).Append("\n");
+            sb.Append("  CustomPolicyID: ").Append(CustomPolicyID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +161,11 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
                     this.AllowPhishing == input.AllowPhishing ||
                     (this.AllowPhishing != null &&
                     this.AllowPhishing.Equals(input.AllowPhishing))
+                ) && 
+                (
+                    this.CustomPolicyID == input.CustomPolicyID ||
+                    (this.CustomPolicyID != null &&
+                    this.CustomPolicyID.Equals(input.CustomPolicyID))
                 );
         }
 
@@ -173,6 +188,8 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Model
                     hashCode = hashCode * 59 + this.AllowPromotionalContent.GetHashCode();
                 if (this.AllowPhishing != null)
                     hashCode = hashCode * 59 + this.AllowPhishing.GetHashCode();
+                if (this.CustomPolicyID != null)
+                    hashCode = hashCode * 59 + this.CustomPolicyID.GetHashCode();
                 return hashCode;
             }
         }
