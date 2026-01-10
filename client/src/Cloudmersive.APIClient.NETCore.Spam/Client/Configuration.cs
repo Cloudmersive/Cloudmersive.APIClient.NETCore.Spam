@@ -29,7 +29,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "2.0.5";
+        public const string Version = "2.0.6";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -110,8 +110,8 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "Swagger-Codegen/2.0.5/csharp";
-            BasePath = "https://localhost";
+            UserAgent = "Swagger-Codegen/2.0.6/csharp";
+            BasePath = "https://api.cloudmersive.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -127,7 +127,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
             IDictionary<string, string> defaultHeader,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://localhost") : this()
+            string basePath = "https://api.cloudmersive.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
@@ -183,7 +183,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "Swagger-Codegen/2.0.5/csharp"
+            string userAgent = "Swagger-Codegen/2.0.6/csharp"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -416,7 +416,7 @@ namespace Cloudmersive.APIClient.NETCore.Spam.Client
             String report = "C# SDK (Cloudmersive.APIClient.NETCore.Spam) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: v1\n";
-            report += "    SDK Package Version: 2.0.5\n";
+            report += "    SDK Package Version: 2.0.6\n";
 
             return report;
         }

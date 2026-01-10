@@ -5,7 +5,7 @@ Easily and directly scan and block spam security threats in input.
 This C# SDK is for the [Cloudmersive Spam Detection API](https://www.cloudmersive.com/spam-api):
 
 - API version: v1
-- SDK version: 2.0.5
+- SDK version: 2.0.6
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -81,7 +81,7 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

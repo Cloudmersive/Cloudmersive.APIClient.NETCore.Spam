@@ -1,6 +1,6 @@
 # Cloudmersive.APIClient.NETCore.Spam.Api.SpamDetectionApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
